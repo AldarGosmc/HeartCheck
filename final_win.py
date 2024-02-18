@@ -1,7 +1,7 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton, QLabel)
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit
 
-from instr.py import *  #загружаем переменные из файла instr.py
+from instr import *  #загружаем переменные из файла instr.py
 
 class FinalWin(QWidget):
     def __init__(self, exp):
@@ -88,8 +88,3 @@ class FinalWin(QWidget):
         self.setWindowTitle(txt_finalwin)
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
-    def connects(self):
-        self.btn_next.clicked.connect(self.next_click)
-app = QApplication([])
-fw = FinalWin()
-app.exec()
