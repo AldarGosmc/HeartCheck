@@ -1,7 +1,7 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton, QLabel)
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel
 
-from instr.py import *  #загружаем переменные из файла instr.py
+from instr import *  #загружаем переменные из файла instr.py
 from second_win import *
 class MainWin(QWidget):
     def __init__(self):
@@ -16,12 +16,12 @@ class MainWin(QWidget):
         self.move(win_x, win_y)
     def initUI(self):
         self.hello_text = QLabel(txt_hello)
-        self.insrtuction = QLabel(txt_insrtuction)
-        self.button = QPushDutton(txt_next)
+        self.instruction = QLabel(txt_instruction)
+        self.btn_next = QPushButton(txt_next)
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.hello_text)
         self.layout.addWidget(self.instruction)
-        self.layout.addWidget(self.button)
+        self.layout.addWidget(self.btn_next)
         self.setLayout(self.layout)
     def next_click(self):
         self.hide()
@@ -31,4 +31,4 @@ class MainWin(QWidget):
 
 app = QApplication([])
 mw = MainWin()
-app.exec()
+app.exec_()
