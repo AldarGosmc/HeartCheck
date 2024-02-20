@@ -12,12 +12,16 @@ class MainWin(QWidget):
         self.show()  # показываем окно
     def set_appear(self):
         self.setWindowTitle(txt_title)
+        self.setStyleSheet("background-color: rgb(120,219,226);")
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
     def initUI(self):
         self.hello_text = QLabel(txt_hello)
+        self.hello_text.setFont(QFont("Times", 18, QFont.Bold))
         self.instruction = QLabel(txt_instruction)
+        self.instruction.setFont(QFont("Times", 12, italic=True))
         self.btn_next = QPushButton(txt_next)
+        self.btn_next.setFont(QFont("Times", 12, QFont.Bold))
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.hello_text)
         self.layout.addWidget(self.instruction)
