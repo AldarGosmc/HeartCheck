@@ -1,4 +1,5 @@
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit
 
 from instr import *  #загружаем переменные из файла instr.py
@@ -76,7 +77,10 @@ class FinalWin(QWidget):
     def initUI(self):
         ''' создает графические элементы '''
         self.workh_text = QLabel(txt_workheart + self.results())
+        self.workh_text.setFont(QFont("Times", 12, italic=True))
         self.index_text = QLabel(txt_index + str(self.index))
+        self.index_text.setFont(QFont("Times", 12, italic=True))
+        
 
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.index_text, alignment = Qt.AlignCenter)
@@ -86,5 +90,6 @@ class FinalWin(QWidget):
     ''' устанавливает, как будет выглядеть окно (надпись, размер, место) '''
     def set_appear(self):
         self.setWindowTitle(txt_finalwin)
+        self.setStyleSheet("background-color: rgb(171,205,239);")
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
